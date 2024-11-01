@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Figtree Variable', sans-serif;
+}
+
+@layer base {
+    .bg-custom-gradient {
+        background: radial-gradient(ellipse at center, rgba(43, 57, 161, 0.2) 10%, rgba(49, 93, 194, 0.2) 60%, rgb(57, 88, 189, 0.2) 90%);
+    }
+
+    .text-custom-gradient {
+        background: radial-gradient(ellipse at center right, rgba(43, 57, 161) 10%, rgb(69, 113, 212) 60%, rgb(57, 88, 189) 90%);
+    }
+}
