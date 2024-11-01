@@ -1,22 +1,88 @@
 ---
-import Menu from "@icons/Menu.astro";
+import MenuButton from "@components/MenuButton.astro";
 ---
 
 <header class="pt-20">
     <div
-        class="w-full fixed top-0 left-0 right-0 h-20 bg-background/60 backdrop-blur flex items-center z-50"
+        class="w-full fixed top-0 left-0 right-0 bg-background/90 backdrop-blur flex items-center z-50"
     >
-        <div class="w-full flex justify-between px-8">
-            <h3 class="text-2xl font-light">
-                Space<span
-                    class="font-bold text-custom-gradient inline-block text-transparent bg-clip-text"
-                    >News</span
-                >
-            </h3>
+        <div class="w-full flex flex-col">
+            <div class="w-full flex justify-between p-8 pt-8 pb-4">
+                <h3 class="text-2xl font-light">
+                    Space<span
+                        class="font-bold text-custom-gradient inline-block text-transparent bg-clip-text"
+                        >News</span
+                    >
+                </h3>
 
-            <button id="menu-btn">
-                <Menu />
-            </button>
+                <MenuButton />
+            </div>
+
+            <nav
+                id="header-navbar"
+                class="col-span-full overflow-x-auto row-[2/3] grid grid-rows-[0fr] transition-[grid-template-rows] md:justify-center md:flex group/nav"
+                data-open="false"
+            >
+                <ul
+                    class="flex flex-col items-center overflow-x-hidden overflow-y-hidden md:flex-row gap-x-2"
+                >
+                    <li
+                        class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+                    >
+                        <a
+                            href="#inicio"
+                            class="w-full border border-transparent p-4 text-xl text-center hover:bg-light/5 hover:border-light transition-colors duration-150 md:rounded-lg"
+                        >
+                            Inicio
+                        </a>
+                    </li>
+                    <li
+                        class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+                    >
+                        <a
+                            href="#inicio"
+                            class="w-full border border-transparent p-4 text-xl text-center hover:bg-light/5 hover:border-light transition-colors duration-150 md:rounded-lg"
+                        >
+                            Carácteristicas
+                        </a>
+                    </li>
+                    <li
+                        class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+                    >
+                        <a
+                            href="#inicio"
+                            class="w-full border border-transparent p-4 text-xl text-center hover:bg-light/5 hover:border-light transition-colors duration-150 md:rounded-lg"
+                        >
+                            Últimos lanzamientos
+                        </a>
+                    </li>
+                    <li
+                        class="flex justify-center w-full first:mt-5 md:first:mt-0 md:block md:w-auto"
+                    >
+                        <a
+                            href="#inicio"
+                            class="w-full border border-transparent p-4 text-xl text-center hover:bg-light/5 hover:border-light transition-colors duration-150 md:rounded-lg"
+                        >
+                            Contáctanos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </header>
+
+<style>
+    #header-navbar[data-open="false"] {
+        display: none;
+    }
+
+    #header-navbar[data-open="true"] {
+        display: block;
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>

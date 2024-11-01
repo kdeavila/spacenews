@@ -1,0 +1,32 @@
+---
+import Section from "@components/Section.astro";
+import Star from "@icons/Star.astro"
+import FeatureItem from "@components/FeatureItem.astro";
+
+const FEATURES = [
+    {
+        title: "Velocidad y rápidez",
+        desc: "Recibe actualizaciones instantáneas sobre SpaceX, para que no te pierdas nada importante.",
+    },
+    {
+        title: "Noticias día a día",
+        desc: "Un resumen diario de las noticias más relevantes de SpaceX, desde lanzamientos hasta misiones.",
+    },
+    {
+        title: "Contenido personalizado",
+        desc: "Adapta tu experiencia eligiendo temas de interés y recibe noticias alineadas a tus pasiones.",
+    },
+];
+---
+
+<Section>
+    <Star slot="icon" />
+
+    <div slot="content" class="w-full grid grid-cols-1 gap-5 px-8">
+        {
+            FEATURES.map(({ title, desc }) => (
+                <FeatureItem title={title} desc={desc} />
+            ))
+        }
+    </div>
+</Section>

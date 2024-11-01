@@ -1,0 +1,51 @@
+---
+interface Props {
+    title: string;
+    desc: string;
+}
+
+const { title, desc } = Astro.props;
+---
+
+<article class="card-hover w-full border rounded-lg p-4">
+    <h3 class="text-xl font-semibold text-neutral-400 mb-2">
+        {title}
+    </h3>
+
+    <p class="text-base font-normal text-neutral-500 leading-snug">
+        {desc}
+    </p>
+</article>
+
+<style>
+    .card-hover {
+        background-color: rgba(255, 255, 255, 0.05);
+        background-image: none;
+        border-color: rgba(255, 255, 255, 0.1);
+        transition:
+            background 0.3s ease-in-out,
+            box-shadow 0.15s ease;
+    }
+
+    .card-hover:hover {
+        background-color: transparent;
+        background-image: radial-gradient(
+            ellipse at center,
+            rgba(56, 68, 161, 0.25) 10%,
+            rgba(49, 93, 194, 0.25) 60%,
+            rgba(57, 88, 189, 0.25) 90%
+        );
+        border-color: #3958bd;
+        box-shadow: 0 0 15px rgba(78, 129, 255, 0.4);
+    }
+
+    .card-hover:hover > h3 {
+        color: rgb(229, 229, 229);
+        transition: color 0.3s ease;
+    }
+
+    .card-hover:hover > p {
+        color: rgb(165, 165, 165);
+        transition: color 0.35s ease;
+    }
+</style>

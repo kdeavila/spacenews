@@ -1,0 +1,55 @@
+---
+import World from "@icons/World.astro";
+import Button from "@components/Button.astro";
+import SpaceX from "@icons/SpaceX.astro";
+---
+
+<section
+    class="relative flex items-center bg-[url('/hero-stars.webp')] bg-center bg-cover bg-no-repeat overflow-hidden mb-4"
+>
+    <div class="w-full absolute flex flex-col px-8 z-20">
+        <div class="flex flex-col gap-1 mb-5">
+            <div class="flex items-center gap-1 text-neutral-200">
+                <World />
+                <h6 class="text-xl font-light">Bienvenido a</h6>
+            </div>
+
+            <h1 class="text-5xl font-light">
+                Space<span
+                    class="font-bold text-custom-gradient inline-block text-transparent bg-clip-text"
+                    >News</span
+                >
+            </h1>
+
+            <div class="max-w-64">
+                <p
+                    class="text-base text-pretty leading-tight text-neutral-400 mb-5"
+                >
+                    Descubre las últimas noticias sobre misiones, lanzamientos y avances tecnológicos de
+                    <strong class="text-neutral-300/90">SpaceX</strong>.
+                </p>
+                <Button href="/launches" title="Ver lanzamientos" />
+            </div>
+        </div>
+
+        <div class="text-neutral-600 mt-16">
+            <p>Powered by:</p>
+            <SpaceX />
+        </div>
+    </div>
+
+    <div class="w-full relative">
+        <div
+            class="absolute inset-0 bg-gradient-to-t from-background to-background/5 z-[5]"
+        >
+        </div>
+        <div class="w-80 rotate-6 ml-auto translate-x-32 z-10 pointer-events-none">
+            <img
+                class="w-full"
+                src="/hero-rocket.webp"
+                alt="falcon rocket"
+            />
+        </div>
+        
+    </div>
+</section>

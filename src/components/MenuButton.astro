@@ -1,0 +1,32 @@
+<button
+    class="flex items-center justify-center py-2 md:hidden group"
+    id="header-navbar-toggle"
+    aria-controls="header-navbar"
+    aria-expanded="false"
+    title="Mostrar Menú"
+    aria-label="Mostrar menú"
+>
+    <div class="space-y-2">
+        <span
+            class="line1 block h-0.5 w-8 origin-center rounded-full bg-white/80 transition-transform ease-in-out"
+        ></span>
+        <span
+            class="line2 block h-0.5 w-8 origin-center rounded-full bg-white/80 transition-transform ease-in-out"
+        ></span>
+    </div>
+</button>
+
+<style>
+    .line1,
+    .line2 {
+        transition: transform 0.15s ease-in-out;
+    }
+
+    .group[aria-expanded="true"] .line1 {
+        transform: translateY(5px) rotate(45deg);
+    }
+
+    .group[aria-expanded="true"] .line2 {
+        transform: translateY(-5px) rotate(-45deg);
+    }
+</style>

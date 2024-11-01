@@ -35,9 +35,9 @@ import Header from "@components/Header.astro";
 	.bg-custom-gradient {
 		background-image: radial-gradient(
 			ellipse at center,
-			rgba(43, 57, 161, 0.2) 10%,
-			rgba(49, 93, 194, 0.2) 60%,
-			rgb(57, 88, 189, 0.2) 90%
+			rgba(56, 68, 161, 0.25) 10%,
+			rgba(49, 93, 194, 0.25) 60%,
+			rgb(57, 88, 189, 0.25) 90%
 		);
 	}
 
@@ -49,4 +49,24 @@ import Header from "@components/Header.astro";
 			rgb(57, 88, 189) 90%
 		);
 	}
+
+	.shadow-custom {
+		box-shadow: 0 0 15px rgb(78, 129, 255, 0.4);
+	}
 </style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const toggleButton = document.getElementById("header-navbar-toggle");
+		const navbar = document.getElementById("header-navbar");
+
+		toggleButton.addEventListener("click", () => {
+			const isExpanded =
+				toggleButton.getAttribute("aria-expanded") === "true";
+
+			toggleButton.setAttribute("aria-expanded", String(!isExpanded));
+
+			navbar.setAttribute("data-open", String(!isExpanded));
+		});
+	});
+</script>

@@ -1,0 +1,11 @@
+---
+import TitleSection from "@components/TitleSection.astro";
+---
+
+<section class="mb-24">
+    <TitleSection title="Carácteristicas" desc="En SpaceNews destacamos por:">
+        <slot name="icon" />
+    </TitleSection>
+
+    <slot name="content" />
+</section>
